@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended:false}));
 
 const adminroutes = require('./routes/admin');
-
+const loginroute = require('./routes/login');
+app.use(loginroute);
 app.use('/admin' , adminroutes);
 
 app.post('/product',(req,res,next)=>{
